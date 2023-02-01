@@ -196,3 +196,22 @@ ALTER TABLE org.company ADD FOREIGN KEY (staff_modified) REFERENCES hr.staff(sta
 -- 01/02/2023 11:00 AM SHEENA AP
 -- Insert new company to org.company table
 INSERT INTO org.company(company_id,company_code,company_name,status,staff_created,staff_modified,date_created,date_modified) VALUES(2,'PMCR','Pinmiro',110,30,30,'2020-11-01 17:03:06','2020-11-01 17:03:06');
+
+-- 01/02/2023 05:00 PM SHEENA AP
+-- Create table for department
+CREATE TABLE org.department(
+department_id SERIAL NOT NULL PRIMARY KEY,
+department_name TEXT NOT NULL,
+department_code TEXT NOT NUll,
+status INTEGER NOT NULL REFERENCES public.status_code(status_code),
+company_id INTEGER NOT NULL REFERENCES org.company(company_id),
+staff_created INTEGER NOT NULL REFERENCES hr.staff(staff_id),
+staff_modified INTEGER NOT NULL REFERENCES hr.staff(staff_id),
+date_created timestamp without time zone NOT NULL,
+date_modified timestamp without time zone NOT NULL);
+
+-- 01/02/2023 05:00 PM SHEENA AP
+-- Insert values to status codes for department
+INSERT INTO public.status_code (status_code,status_name,status_code_context,notes) values
+(115,'Active Departmet','Department',' '),
+(116,'Inactive Department','Department',' ');

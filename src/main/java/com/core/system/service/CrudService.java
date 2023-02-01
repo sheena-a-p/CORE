@@ -21,9 +21,4 @@ public class CrudService {
         T val = (T) clazz;
         return val;
     }
-
-    public <T> T getMeta(Class<T> clazz){
-        T val = (T) clazz;
-        return val;
-    }
 }

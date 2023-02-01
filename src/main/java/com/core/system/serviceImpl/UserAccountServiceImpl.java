@@ -55,13 +55,13 @@ public class UserAccountServiceImpl extends CrudService implements UserAccountSe
     private static final Logger LOGGER = LoggerFactory.getLogger(UserAccountServiceImpl.class);
 
     @Override
-    public void createUserAccount(UserAccount userAccount) {
+    public void create(UserAccount userAccount) {
         preCreate(userAccount);
         userAccountRepository.save(userAccount);
     }
 
     @Override
-    public void updateUserAccount(UserAccount userAccount) {
+    public void update(UserAccount userAccount) {
         preUpdate(userAccount);
         userAccountRepository.save(userAccount);
     }

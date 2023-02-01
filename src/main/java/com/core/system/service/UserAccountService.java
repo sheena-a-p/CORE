@@ -8,9 +8,9 @@ import java.security.GeneralSecurityException;
 
 public interface UserAccountService {
 
-    void createUserAccount(UserAccount userAccount);
+    void create(UserAccount userAccount);
 
-    void updateUserAccount(UserAccount userAccount);
+    void update(UserAccount userAccount);
 
     LoginView userLogin(UserLoginForm userLoginForm);
 

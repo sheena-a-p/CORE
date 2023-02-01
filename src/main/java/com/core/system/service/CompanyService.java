@@ -1,13 +1,16 @@
 package com.core.system.service;
-import com.core.system.entity.System.Company;
+import com.core.system.entity.org.Company;
+import com.core.system.form.CompanyForm;
+import com.core.system.view.CompanyView;
 
 public interface CompanyService {
 
-    Company createCompany(Company company);
+    void create(CompanyForm companyForm);
 
-    Company updateCompany(Company company);
+    void update(CompanyForm companyForm);
 
-    Company getById(Integer companuId);
+    Company getById(Integer companyId);
 
-    Integer getCurrentCompanyId(Integer userId);
+    CompanyView getViewById(Integer companyId);
+
 }
